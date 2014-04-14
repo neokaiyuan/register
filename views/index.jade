@@ -2,4 +2,29 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  form(role="form", name="registration-form", action="/confirmation", method="post")
+    div.form-group
+      label(for="first-name") First name
+      input(type="text", class="form-control", id="first-name", placeholder="First name")
+    div.form-group
+      label(for="last-name") Last name
+      input(type="text", class="form-control", id="last-name", placeholder="Last name")
+    div.form-group
+      label(for="email") Email address
+      input(type="email", class="form-control", id="email", placeholder="Email")
+    div.form-group
+      label(for="company") Company
+      input(type="text", class="form-control", id="company", placeholder="Company")
+    div.form-group
+      label(for="company-url") Company URL
+      input(type="url", class="form-control", id="company-url", placeholder="Company URL")
+    div.form-group
+      label(for="company-description") Company Description
+      input(type="text", class="form-control", id="company-description", placeholder="Company Description")
+    div.form-group
+      label(for="zip-code") Zip Code
+      input(type="number", min="0", max="99999", class="form-control", id="zip-code", placeholder="Zip Code")
+    div.form-group
+      label(for="comments") Other Comments
+      input(type="text", class="form-control", id="comments", placeholder="Other Comments")
+    button(type="submit", class="btn btn-default") Submit
