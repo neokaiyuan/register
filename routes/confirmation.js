@@ -23,7 +23,7 @@ router.post('/confirmation', function(req, res) {
   postmark.send({
         "From": "sf.citi <kneo@stanford.edu>", 
         "To": "kaiyuan.neo@gmail.com", 
-        //"Bcc": "abram@svangel.com", 
+        "Bcc": "abram@svangel.com", 
         "Subject": "[NEW SIGNUP] " + req.body.company, 
         "TextBody": register_email_body
   });
@@ -39,7 +39,7 @@ router.post('/confirmation', function(req, res) {
   postmark.send({
         "From": "sf.citi <kneo@stanford.edu>", 
         "To": "kaiyuan.neo@gmail.com", 
-        //"Bcc": "abram@svangel.com", 
+        "Bcc": "abram@svangel.com", 
         "Subject": "Thanks from sf.citi",
         "TextBody": thanks_email_body
   });
