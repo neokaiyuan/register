@@ -4,27 +4,27 @@ block content
   h1= title
   form(role="form", name="registration-form", action="/confirmation", method="post")
     div.form-group
-      label(for="first-name") First name
-      input(type="text", class="form-control", id="first-name", placeholder="First name")
+      label(for="first_name") First name
+      input(type="text", class="form-control", name="first_name", placeholder="Jane", required)
     div.form-group
-      label(for="last-name") Last name
-      input(type="text", class="form-control", id="last-name", placeholder="Last name")
+      label(for="last_name") Last name
+      input(type="text", class="form-control", name="last_name", placeholder="Doe", required)
     div.form-group
       label(for="email") Email address
-      input(type="email", class="form-control", id="email", placeholder="Email")
+      input(type="email", class="form-control", name="email", placeholder="jane.doe@example.com", required)
     div.form-group
       label(for="company") Company
-      input(type="text", class="form-control", id="company", placeholder="Company")
+      input(type="text", class="form-control", name="company", placeholder="ABC", required)
     div.form-group
-      label(for="company-url") Company URL
-      input(type="url", class="form-control", id="company-url", placeholder="Company URL")
+      label(for="company_url") Company URL
+      input(type="url", class="form-control", name="company_url", placeholder="http://abc.com")
     div.form-group
-      label(for="company-description") Company Description
-      input(type="text", class="form-control", id="company-description", placeholder="Company Description")
+      label(for="company_description") Company Description
+      textarea(class="form-control", name="company_description", rows="3", placeholder="Tell us about yourself.")
     div.form-group
-      label(for="zip-code") Zip Code
-      input(type="number", min="0", max="99999", class="form-control", id="zip-code", placeholder="Zip Code")
+      label(for="zip_code") Zip Code
+      input(type="number", min="0", max="99999", class="form-control", name="zip_code", placeholder="12345")
     div.form-group
       label(for="comments") Other Comments
-      input(type="text", class="form-control", id="comments", placeholder="Other Comments")
+      textarea(class="form-control", name="comments", rows="3", placeholder="Tell us about anything.")
     button(type="submit", class="btn btn-default") Submit
