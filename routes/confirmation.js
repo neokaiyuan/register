@@ -21,9 +21,10 @@ router.post('/confirmation', function(req, res) {
   register_email_body += req.body.comments;
 
   postmark.send({
-        "From": "sf.citi <kneo@stanford.edu>", 
-        "To": "kaiyuan.neo@gmail.com", 
-        "Bcc": "abram@svangel.com", 
+        "From": "sf.citi <jeremy@sfciti.com>", 
+        //"To": "jeremy@sfciti.com", 
+        //"Bcc": "erika@sfciti.com", 
+        "Bcc": "kneo@stanford.edu, kaiyuan.neo@gmail.com", 
         "Subject": "[NEW SIGNUP] " + req.body.company, 
         "TextBody": register_email_body
   });
@@ -37,9 +38,10 @@ router.post('/confirmation', function(req, res) {
   thanks_email_body += "Jeremy"
 
   postmark.send({
-        "From": "sf.citi <kneo@stanford.edu>", 
-        "To": "kaiyuan.neo@gmail.com", 
-        "Bcc": "abram@svangel.com", 
+        "From": "sf.citi <jeremy@sfciti.com>", 
+        //"To": "", 
+        //"Bcc": "jeremy@sfciti.com, erika@sfciti.com", 
+        "Bcc": "kneo@stanford.edu, kaiyuan.neo@gmail.com", 
         "Subject": "Thanks from sf.citi",
         "TextBody": thanks_email_body
   });
