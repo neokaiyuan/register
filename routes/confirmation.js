@@ -16,15 +16,17 @@ router.post('/confirmation', function(req, res) {
   register_email_body += "Email: " + req.body.email + "\n";
   //register_email_body += "Job Title: " + req.body.job_title + "\n";
   
-  register_email_body += "\n-- Comments --\n";
-  register_email_body += req.body.first_name + " says: \n";
-  register_email_body += req.body.comments;
+  if (req.body.comments) {
+    register_email_body += "\n-- Comments --\n";
+    register_email_body += req.body.first_name + " says: \n";
+    register_email_body += req.body.comments;  
+  }
 
   postmark.send({
         "From": "sf.citi <jeremy@sfciti.com>", 
-        //"To": "jeremy@sfciti.com", 
-        //"Bcc": "erika@sfciti.com", 
-        "Bcc": "kneo@stanford.edu, kaiyuan.neo@gmail.com", 
+        "To": "erika@sfciti.com", 
+        "Cc": "jeremy@sfciti.com",
+        "Bcc": "kaiyuan.neo@gmail.com, abram@svangel.com", 
         "Subject": "[NEW SIGNUP] " + req.body.company, 
         "TextBody": register_email_body
   });
@@ -39,9 +41,8 @@ router.post('/confirmation', function(req, res) {
 
   postmark.send({
         "From": "sf.citi <jeremy@sfciti.com>", 
-        //"To": "", 
-        //"Bcc": "jeremy@sfciti.com, erika@sfciti.com", 
-        "Bcc": "kneo@stanford.edu, kaiyuan.neo@gmail.com", 
+        "To": req.body.email, 
+        "Bcc": "erika@sfciti.com, kaiyuan.neo@gmail.com, abram@svangel.com", 
         "Subject": "Thanks from sf.citi",
         "TextBody": thanks_email_body
   });
