@@ -42,7 +42,7 @@ router.post('/confirmation', function(req, res) {
   postmark.send({
         "From": "sf.citi <jeremy@sfciti.com>", 
         "To": req.body.email, 
-        "Bcc": "erika@sfciti.com, kaiyuan.neo@gmail.com, abram@svangel.com", 
+        "Bcc": "jeremy@sfciti.com, erika@sfciti.com, kaiyuan.neo@gmail.com, abram@svangel.com", 
         "Subject": "Thanks from sf.citi",
         "TextBody": thanks_email_body
   });
